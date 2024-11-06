@@ -72,6 +72,18 @@
 
         }
 
+        function previous() {
+            if (index > 0) {
+                index--;
+            }
+            else {
+                index = images.length - 1;
+            }
+            slideImg.src = images[index]
+        }
+        setInterval(next, 6000);
+
+
     </script>
 
 </body>
