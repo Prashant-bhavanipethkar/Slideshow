@@ -11,6 +11,39 @@
             margin: 50px auto;
             position: relative;
         }
+
+        .slide-img {
+            height: 400px;
+            width: 600px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .slide-action-icon {
+            height: 50px;
+            position: absolute;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .icon-next {
+            right: 10px;
+            top: 50%;
+        }
+
+        .icon-next:hover {
+            transform: scale(0.8) translateX(10px);
+        }
+
+        .icon-previous {
+            left: 10px;
+            top: 50%;
+        }
+
+        .icon-previous:hover {
+            transform: scale(0.8) translateX(-10px);
+        }
+
     </style>
 
 </head>
@@ -21,6 +54,26 @@
         <img src="./img/next.png" alt="next" onclick="next()" class="slide-action-icon icon-next">
         <img src="./img/previous.png" alt="previous" onclick="previous()" class="slide-action-icon icon-previous">
     </div>
+
+    <script>
+        const images = ["./img/01.avif", "./img/02.avif", "./img/03.avif", "./img/04.avif", "./img/05.avif", "./img/06.jpg", "./img/07.jpg", "./img/08.webp"]
+
+        let index = 0;
+        const slideImg = document.getElementById('slide-img');
+
+        function next() {
+            if (index < images.length - 1) {
+                index++;
+            }
+            else {
+                index = 0;
+            }
+            slideImg.src = images[index]
+
+        }
+
+    </script>
+
 </body>
 
 </html>
